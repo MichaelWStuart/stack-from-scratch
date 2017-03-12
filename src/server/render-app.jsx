@@ -1,5 +1,6 @@
 // @flow
 
+import Helmet from 'react-helmet';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-redux';
@@ -19,11 +20,14 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
       </StaticRouter>
     </Provider>);
 
+  const head = Helmet.rewind();
+
   return (
     `<!doctype html>
     <html>
       <head>
-        <title>FIX ME</title>
+        ${head.title}
+        ${head.meta}
         <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
       </head>
       <body>
