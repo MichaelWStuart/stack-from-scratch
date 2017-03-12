@@ -2,7 +2,7 @@
 
 import 'babel-polyfill';
 
-import Immutable from 'immutable';
+import * as Immutable from 'immutable';
 import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
